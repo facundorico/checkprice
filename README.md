@@ -154,6 +154,41 @@ gradlew test     # En Windows (CMD o PowerShell)
 ```
 
 ---
+## 🔍 Acceder a la Consola de H2
+```
+Para verificar los datos en la base de datos en memoria H2, puedes acceder a la consola web de H2 siguiendo estos pasos:
+
+1️⃣ Iniciar la Aplicación
+
+Asegúrate de que tu aplicación Spring Boot está corriendo correctamente. Puedes iniciarla con el siguiente comando:
+
+./gradlew bootRun
+
+2️⃣ Abrir la Consola de H2
+
+Abre tu navegador web y accede a la siguiente URL:
+
+http://localhost:8080/h2-console
+
+3️⃣ Configuración de Conexión
+
+Cuando la consola de H2 se abra, usa la siguiente configuración para conectarte a la base de datos:
+
+JDBC URL: jdbc:h2:mem:checkpricedb
+
+User: sa
+
+Password: (dejar vacío)
+
+4️⃣ Ejecutar Consultas
+
+Una vez conectado, puedes ejecutar consultas SQL para inspeccionar los datos cargados en la base de datos. Ejemplo:
+
+SELECT * FROM PRICES;
+
+Esto te permitirá visualizar los datos de la tabla PRICES y asegurarte de que la carga de datos ha sido correcta.
+```
+---
 
 ## 🏗️ Futuras Mejoras
 - Agregar autenticación y autorización con JWT.
