@@ -1,43 +1,47 @@
 package com.inditex.checkprice.infrastructure.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.math.BigDecimal;
+
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "PRICES")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "PRICES")
 public class PriceEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "brand_id", nullable = false)
-    private Integer brandId;
+    @Column(name = "BRAND_ID")
+    private Long brandId;
 
-    @Column(name = "start_date", nullable = false)
+    @Column(name = "START_DATE")
     private LocalDateTime startDate;
 
-    @Column(name = "end_date", nullable = false)
+    @Column(name = "END_DATE")
     private LocalDateTime endDate;
 
-    @Column(name = "price_list", nullable = false)
-    private Integer priceList;
+    @Column(name = "PRICE_LIST")
+    private Long priceList;
 
-    @Column(name = "product_id", nullable = false)
-    private Integer productId;
+    @Column(name = "PRODUCT_ID")
+    private Long productId;
 
-    @Column(name = "priority", nullable = false)
-    private Integer priority;
+    @Column(name = "PRIORITY")
+    private Long priority;
 
-    @Column(name = "price", nullable = false)
-    private BigDecimal price;
+    @Column(name = "PRICE")
+    private Double price;
 
-    @Column(name = "curr", nullable = false)
+    @Column(name = "CURR")
     private String currency;
 
 }

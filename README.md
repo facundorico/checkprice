@@ -24,16 +24,15 @@ El código está organizado en varias capas siguiendo la arquitectura hexagonal:
  ┃ ┃ ┗ 📜 PriceServiceImpl.java  # Implementación del servicio
  ┣ 📂 infrastructure        # Capa de infraestructura (Adaptadores)
  ┃ ┣ 📜 repository
- ┃ ┃ ┗ 📜 PriceRepositoryImpl.java  # Implementación del repositorio JPA
+ ┃ ┃ ┗ 📜 jpa
+ ┃ ┃   ┗ 📜 PriceRepositoryImpl.java  # Implementación del repositorio JPA
  ┃ ┣ 📜 config
  ┃ ┃ ┗ 📜 DatabaseConfig.java  # Configuración de H2
  ┃ ┗ 📜 entity
  ┃ ┃ ┗ 📜 PriceEntity.java      # Entidad JPA
  ┗ 📂 api                   # Capa de entrada (Adaptador de controlador)
    ┣ 📜 controller
-   ┃ ┗ 📜 PriceController.java  # API REST para consultas de precios
-   ┣ 📜 request
-   ┗ ┗ 📜 PriceRequestDto.java  # DTO para la petición
+   ┗ ┗ 📜 PriceController.java  # API REST para consultas de precios
 ```
 
 ---
@@ -58,9 +57,8 @@ Incluye la implementación de la persistencia y configuraciones.
 - **`entity/PriceEntity.java`** → Entidad JPA que mapea la tabla en la base de datos.
 
 ### 4️⃣ **Capa de Entrada (`api`)**
-Contiene los controladores que exponen la API REST.
+Contiene el controlador que expone la API REST.
 - **`controller/PriceController.java`** → Controlador que maneja las peticiones HTTP.
-- **`request/PriceRequestDto.java`** → DTO para recibir parámetros en la consulta.
 
 ### 5️⃣ **Capa de Pruebas (`test`)**
 Incluye pruebas unitarias y de integración para validar el servicio.
